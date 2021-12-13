@@ -1,0 +1,20 @@
+# Colending::ResponseCreateTrancheBusinessDataPrivateEntityDetail
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**cin_number** | **String** | CIN number in case of a company | [optional] 
+**cin_link** | **String** | CIN image | [optional] 
+**cin_link_password** | **String** | CIN image password | [optional] 
+**moa_link** | **String** | MOA image | [optional] 
+**moa_link_password** | **String** | MOA image password | [optional] 
+**aoa_link** | **String** | AOA image | [optional] 
+**aoa_link_password** | **String** | AOA image password | [optional] 
+**board_resoultion_link** | **String** | Board resolution image | [optional] 
+**board_resoultion_link_password** | **String** | Board resolution image password | [optional] 
+**share_holding_pattern_link** | **String** | Shareholding pattern image | [optional] 
+**share_holding_pattern_link_password** | **String** | Shareholding pattern image password | [optional] 
+**other_company_proof** | **String** | Free flowing text | [optional] 
+**other_company_proof_link** | **Array&lt;String&gt;** | Image | [optional] 
+**other_company_proof_link_password** | **String** | Image password | [optional] 
+
