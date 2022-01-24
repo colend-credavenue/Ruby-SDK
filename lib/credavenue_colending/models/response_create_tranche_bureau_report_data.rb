@@ -80,6 +80,18 @@ module Colending
     # Number of Enquiries in the Last 12 Months per Bureau Report
     attr_accessor :number_of_enquiries_12months
 
+    # Maximum DPD Tradeline in the Last 3 Months
+    attr_accessor :max_dpd_tradeline_last_3months
+
+    # Maximum DPD Tradeline in the Last 6 Months
+    attr_accessor :max_dpd_tradeline_last_6months
+
+    # Number of Pl enquiries in the Last 30 days
+    attr_accessor :number_of_pl_enquiries_in_last_30days
+
+    # Value of total outstanding loans
+    attr_accessor :value_of_total_outstanding_loans
+
     # Number of Writeoff Suitfiled Settled in the Last 12 Months
     attr_accessor :number_of_writeoff_suitfiled_settled_12months
 
@@ -134,6 +146,10 @@ module Colending
         :'value_of_total_loans' => :'value_of_total_loans',
         :'number_of_enquiries_3months' => :'number_of_enquiries_3months',
         :'number_of_enquiries_6months' => :'number_of_enquiries_6months',
+        :'max_dpd_tradeline_last_3months' => :'max_dpd_tradeline_last_3months',
+        :'max_dpd_tradeline_last_6months' => :'max_dpd_tradeline_last_6months',
+        :'number_of_pl_enquiries_in_last_30days' => :'number_of_pl_enquiries_in_last_30days',
+        :'value_of_total_outstanding_loans' => :'value_of_total_outstanding_loans',
         :'number_of_enquiries_12months' => :'number_of_enquiries_12months',
         :'number_of_writeoff_suitfiled_settled_12months' => :'number_of_writeoff_suitfiled_settled_12months',
         :'max_dpd_tradeline_12months' => :'max_dpd_tradeline_12months',
@@ -175,6 +191,11 @@ module Colending
         :'number_of_enquiries_12months' => :'Object',
         :'number_of_writeoff_suitfiled_settled_12months' => :'Object',
         :'max_dpd_tradeline_12months' => :'Object',
+        :'max_dpd_tradeline_last_12months' => :'Object',
+        :'max_dpd_tradeline_last_3months' => :'Object',
+        :'max_dpd_tradeline_last_6months' => :'Object',
+        :'number_of_pl_enquiries_in_last_30days' => :'Object',
+        :'value_of_total_outstanding_loans' => :'Object',
         :'max_overdue_tradeline' => :'Object',
         :'total_overdue_amount_12months' => :'Object',
         :'loan_amount_settled_12months' => :'Object',
@@ -311,6 +332,22 @@ module Colending
         self.max_dpd_tradeline_12months = attributes[:'max_dpd_tradeline_12months']
       end
 
+      if attributes.key?(:'max_dpd_tradeline_last_3months')
+        self.max_dpd_tradeline_last_3months = attributes[:'max_dpd_tradeline_last_3months']
+      end
+
+      if attributes.key?(:'number_of_pl_enquiries_in_last_30days')
+        self.number_of_pl_enquiries_in_last_30days = attributes[:'number_of_pl_enquiries_in_last_30days']
+      end
+
+      if attributes.key?(:'max_dpd_tradeline_last_6months')
+        self.max_dpd_tradeline_last_6months = attributes[:'max_dpd_tradeline_last_6months']
+      end
+
+      if attributes.key?(:'value_of_total_outstanding_loans')
+        self.value_of_total_outstanding_loans = attributes[:'value_of_total_outstanding_loans']
+      end
+
       if attributes.key?(:'max_overdue_tradeline')
         self.max_overdue_tradeline = attributes[:'max_overdue_tradeline']
       end
@@ -386,6 +423,10 @@ module Colending
           number_of_enquiries_12months == o.number_of_enquiries_12months &&
           number_of_writeoff_suitfiled_settled_12months == o.number_of_writeoff_suitfiled_settled_12months &&
           max_dpd_tradeline_12months == o.max_dpd_tradeline_12months &&
+          max_dpd_tradeline_last_3months == o.max_dpd_tradeline_last_3months &&
+          max_dpd_tradeline_last_6months == o.max_dpd_tradeline_last_6months &&
+          number_of_pl_enquiries_in_last_30days == o.number_of_pl_enquiries_in_last_30days &&
+          value_of_total_outstanding_loans == o.value_of_total_outstanding_loans &&
           max_overdue_tradeline == o.max_overdue_tradeline &&
           total_overdue_amount_12months == o.total_overdue_amount_12months &&
           loan_amount_settled_12months == o.loan_amount_settled_12months &&
@@ -405,7 +446,7 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name_of_bureau, bureau_vintage, bureau_score, bureau_report_link, bureau_report_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer, total_existing_obligations, credit_card_limit, number_of_credit_cards, number_of_unsecured_loans, value_of_total_unsecured_loans, number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_12months, max_dpd_tradeline_12months, max_overdue_tradeline, total_overdue_amount_12months, loan_amount_settled_12months, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, emi_bounces_6months, emi_bounces_12months].hash
+      [name_of_bureau, bureau_vintage, bureau_score, bureau_report_link, bureau_report_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer, total_existing_obligations, credit_card_limit, number_of_credit_cards, number_of_unsecured_loans, value_of_total_unsecured_loans, number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_12months, max_dpd_tradeline_12months, number_of_pl_enquiries_in_last_30days, value_of_total_outstanding_loans, max_dpd_tradeline_last_3months, max_dpd_tradeline_last_6months max_overdue_tradeline, total_overdue_amount_12months, loan_amount_settled_12months, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, emi_bounces_6months, emi_bounces_12months].hash
     end
 
     # Builds the object from hash

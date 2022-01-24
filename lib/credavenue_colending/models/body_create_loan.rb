@@ -382,6 +382,18 @@ module Colending
     # Maximum DPD Tradeline in the Last 12 Months
     attr_accessor :max_dpd_tradeline_last_12months
 
+    # Maximum DPD Tradeline in the Last 3 Months
+    attr_accessor :max_dpd_tradeline_last_3months
+
+    # Maximum DPD Tradeline in the Last 6 Months
+    attr_accessor :max_dpd_tradeline_last_6months
+
+    # Number of Pl enquiries in the Last 30 days
+    attr_accessor :number_of_pl_enquiries_in_last_30days
+
+    # Value of total outstanding loans
+    attr_accessor :value_of_total_outstanding_loans
+
     # Maximum Overdue Tradeline
     attr_accessor :max_overdue_tradeline
 
@@ -734,6 +746,10 @@ module Colending
         :'number_of_enquiries_12months' => :'number_of_enquiries_12months',
         :'number_of_writeoff_suitfiled_settled_in_the_last_12_months' => :'number_of_writeoff_suitfiled_settled_in_the_last_12_months',
         :'max_dpd_tradeline_last_12months' => :'max_dpd_tradeline_last_12months',
+        :'max_dpd_tradeline_last_3months' => :'max_dpd_tradeline_last_3months',
+        :'max_dpd_tradeline_last_6months' => :'max_dpd_tradeline_last_6months',
+        :'number_of_pl_enquiries_in_last_30days' => :'number_of_pl_enquiries_in_last_30days',
+        :'value_of_total_outstanding_loans' => :'value_of_total_outstanding_loans',
         :'max_overdue_tradeline' => :'max_overdue_tradeline',
         :'total_overdue_amount_in_last_12m' => :'total_overdue_amount_in_last_12m',
         :'amount_of_loan_settled_in_last_12m' => :'amount_of_loan_settled_in_last_12m',
@@ -941,6 +957,10 @@ module Colending
         :'number_of_enquiries_12months' => :'Object',
         :'number_of_writeoff_suitfiled_settled_in_the_last_12_months' => :'Object',
         :'max_dpd_tradeline_last_12months' => :'Object',
+        :'max_dpd_tradeline_last_3months' => :'Object',
+        :'max_dpd_tradeline_last_6months' => :'Object',
+        :'number_of_pl_enquiries_in_last_30days' => :'Object',
+        :'value_of_total_outstanding_loans' => :'Object',
         :'max_overdue_tradeline' => :'Object',
         :'total_overdue_amount_in_last_12m' => :'Object',
         :'amount_of_loan_settled_in_last_12m' => :'Object',
@@ -1576,6 +1596,22 @@ module Colending
         self.max_dpd_tradeline_last_12months = attributes[:'max_dpd_tradeline_last_12months']
       end
 
+      if attributes.key?(:'max_dpd_tradeline_last_3months')
+        self.max_dpd_tradeline_last_3months = attributes[:'max_dpd_tradeline_last_3months']
+      end
+
+      if attributes.key?(:'number_of_pl_enquiries_in_last_30days')
+        self.number_of_pl_enquiries_in_last_30days = attributes[:'number_of_pl_enquiries_in_last_30days']
+      end
+
+      if attributes.key?(:'max_dpd_tradeline_last_6months')
+        self.max_dpd_tradeline_last_6months = attributes[:'max_dpd_tradeline_last_6months']
+      end
+
+      if attributes.key?(:'value_of_total_outstanding_loans')
+        self.value_of_total_outstanding_loans = attributes[:'value_of_total_outstanding_loans']
+      end
+
       if attributes.key?(:'max_overdue_tradeline')
         self.max_overdue_tradeline = attributes[:'max_overdue_tradeline']
       end
@@ -2043,6 +2079,10 @@ module Colending
           number_of_enquiries_12months == o.number_of_enquiries_12months &&
           number_of_writeoff_suitfiled_settled_in_the_last_12_months == o.number_of_writeoff_suitfiled_settled_in_the_last_12_months &&
           max_dpd_tradeline_last_12months == o.max_dpd_tradeline_last_12months &&
+          max_dpd_tradeline_last_3months == o.max_dpd_tradeline_last_3months &&
+          max_dpd_tradeline_last_6months == o.max_dpd_tradeline_last_6months &&
+          number_of_pl_enquiries_in_last_30days == o.number_of_pl_enquiries_in_last_30days &&
+          value_of_total_outstanding_loans == o.value_of_total_outstanding_loans &&
           max_overdue_tradeline == o.max_overdue_tradeline &&
           total_overdue_amount_in_last_12m == o.total_overdue_amount_in_last_12m &&
           amount_of_loan_settled_in_last_12m == o.amount_of_loan_settled_in_last_12m &&
@@ -2131,7 +2171,7 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [customer_type, customer_category, client_customer_id, title, first_name, middle_name, last_name, gender, date_of_birth, age, mobile_number, phone_number, email, official_email_id, place_of_birth, current_address, current_village, current_city_tier, current_city, current_district, current_state, current_country, current_pincode, residence_type_current_address, years_of_stay_in_current_address, permanent_address, permanent_city, permanent_city_tier, permanent_district, permanent_state, permanent_pincode, residence_type_permanent_address, years_of_stay_in_permanent_address, mailing_address, marital_status, religion, nationality, father_name, mother_name, spouse_name, education_qualification, net_monthly_income, annual_income, no_of_dependants, occupation, partner_score_on_the_customer, politically_exposed, income_source, applicant_profession, caution_negative_profile, udyam_number, pan_check, dedupe_status, pan_number, pan_number_link, pan_number_link_password, form_60_link, form_60_link_password, aadhar_number, aadhar_number_link, aadhar_number_link_password, voter_id_number, voting_id_link, voting_id_link_password, driving_license_number, driving_license_number_link, driving_license_number_link_password, driving_license_expiry_date, passport_number, passport_number_link, passport_number_link_password, video_image_link, video_image_link_password, video_kyc_detail, other_kyc_number, other_kyc_link, other_kyc_link_password, rent_agreement_link, rent_agreement_link_password, utility_bills_link, utility_bills_link_password, photo_link, photo_link_password, employer_tier, employer_category, employment_type, employment_details_name, employment_details_address, employment_details_years_of_experience, employment_details_designation, employement_vintage_current_organisation, total_work_experience, payslip_link, payslip_link_password, tds_certificate_link, tds_certificate_link_password, business, guarantors, co_applicants, bank_statement, name_of_bureau, bureau_vintage, bureau_score, bureau_report_json_link, bureau_report_json_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer_including_bureau_report, total_existing_obligations, credit_card_limit, no_of_credit_cards, total_number_of_unsecured_loans, value_of_total_unsecured_loans, total_number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_in_the_last_12_months, max_dpd_tradeline_last_12months, max_overdue_tradeline, total_overdue_amount_in_last_12m, amount_of_loan_settled_in_last_12m, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, bounces_in_last_6m, bounces_in_last_12m, bureau_validity_date, financial_data, abb_emi_ratio, dscr, foir, ltr, insr, eligibility_as_per_insr, eligibility_as_per_foir, eligibility_as_per_ltv, eligibility_loan_amount, fcf, emi_obligations, viability_ratio, product_id, client_loan_id, application_id, loan_cycle, partner_branch_code, partner_branch_name, product_type, partner_product_code, partner_scheme_code, category, sub_category, purpose, disbursement_type, number_of_tranches, end_borrower_amount, existing_lender_amount, principal_amount, interest_rate, interest_type, tenure, tenure_frequency, repayment_frequency, number_of_repayments, first_repayment_date, repayment_mode, advance_emi, umrn, interest_start_date, differential_interest, processing_fee, stamp_duty, insurance_charges, documentation_charges, other_charges, loan_plr_type, loan_plr_rate, spread_id, loan_emi, rcu_status, surrogate, sub_class, weaker_section, disbursement_accounts, assets, references, insurance_details, psl_flag, psl_description, psl_code, psl_proof_link, psl_proof_link_password, tranches, linked_loan_infos, sourcing_detail, deviation_details].hash
+      [customer_type, customer_category, client_customer_id, title, first_name, middle_name, last_name, gender, date_of_birth, age, mobile_number, phone_number, email, official_email_id, place_of_birth, current_address, current_village, current_city_tier, current_city, current_district, current_state, current_country, current_pincode, residence_type_current_address, years_of_stay_in_current_address, permanent_address, permanent_city, permanent_city_tier, permanent_district, permanent_state, permanent_pincode, residence_type_permanent_address, years_of_stay_in_permanent_address, mailing_address, marital_status, religion, nationality, father_name, mother_name, spouse_name, education_qualification, net_monthly_income, annual_income, no_of_dependants, occupation, partner_score_on_the_customer, politically_exposed, income_source, applicant_profession, caution_negative_profile, udyam_number, pan_check, dedupe_status, pan_number, pan_number_link, pan_number_link_password, form_60_link, form_60_link_password, aadhar_number, aadhar_number_link, aadhar_number_link_password, voter_id_number, voting_id_link, voting_id_link_password, driving_license_number, driving_license_number_link, driving_license_number_link_password, driving_license_expiry_date, passport_number, passport_number_link, passport_number_link_password, video_image_link, video_image_link_password, video_kyc_detail, other_kyc_number, other_kyc_link, other_kyc_link_password, rent_agreement_link, rent_agreement_link_password, utility_bills_link, utility_bills_link_password, photo_link, photo_link_password, employer_tier, employer_category, employment_type, employment_details_name, employment_details_address, employment_details_years_of_experience, employment_details_designation, employement_vintage_current_organisation, total_work_experience, payslip_link, payslip_link_password, tds_certificate_link, tds_certificate_link_password, business, guarantors, co_applicants, bank_statement, name_of_bureau, bureau_vintage, bureau_score, bureau_report_json_link, bureau_report_json_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer_including_bureau_report, total_existing_obligations, credit_card_limit, no_of_credit_cards, total_number_of_unsecured_loans, value_of_total_unsecured_loans, total_number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_in_the_last_12_months, max_dpd_tradeline_last_12months,number_of_pl_enquiries_in_last_30days, value_of_total_outstanding_loans, max_dpd_tradeline_last_3months, max_dpd_tradeline_last_6months, max_overdue_tradeline, total_overdue_amount_in_last_12m, amount_of_loan_settled_in_last_12m, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, bounces_in_last_6m, bounces_in_last_12m, bureau_validity_date, financial_data, abb_emi_ratio, dscr, foir, ltr, insr, eligibility_as_per_insr, eligibility_as_per_foir, eligibility_as_per_ltv, eligibility_loan_amount, fcf, emi_obligations, viability_ratio, product_id, client_loan_id, application_id, loan_cycle, partner_branch_code, partner_branch_name, product_type, partner_product_code, partner_scheme_code, category, sub_category, purpose, disbursement_type, number_of_tranches, end_borrower_amount, existing_lender_amount, principal_amount, interest_rate, interest_type, tenure, tenure_frequency, repayment_frequency, number_of_repayments, first_repayment_date, repayment_mode, advance_emi, umrn, interest_start_date, differential_interest, processing_fee, stamp_duty, insurance_charges, documentation_charges, other_charges, loan_plr_type, loan_plr_rate, spread_id, loan_emi, rcu_status, surrogate, sub_class, weaker_section, disbursement_accounts, assets, references, insurance_details, psl_flag, psl_description, psl_code, psl_proof_link, psl_proof_link_password, tranches, linked_loan_infos, sourcing_detail, deviation_details].hash
     end
 
     # Builds the object from hash
