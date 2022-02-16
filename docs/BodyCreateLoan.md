@@ -204,4 +204,5 @@ Name | Type | Description | Notes
 **linked_loan_infos** | [**Array&lt;BodyCreateLoanLinkedLoanInfos&gt;**](BodyCreateLoanLinkedLoanInfos.md) | Refer table LinkedLoanInfos for attributes | [optional] 
 **sourcing_detail** | [**BodyCreateLoanSourcingDetail**](BodyCreateLoanSourcingDetail.md) |  | [optional] 
 **deviation_details** | [**Array&lt;BodyCreateLoanDeviationDetails&gt;**](BodyCreateLoanDeviationDetails.md) | Refer table DeviationDetails for attributes | [optional] 
+**consumer_durable** | [**BodyCreateLoanConsumerDurable**](BodyCreateLoanConsumerDurable.md) | Refer table ConsumerDurable for attributes| [optional]
 
