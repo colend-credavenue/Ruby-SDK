@@ -25,4 +25,5 @@ Name | Type | Description | Notes
 **abb** | **Float** | Average Bank Balance maintaiend on the EMI dates (Calculated by the Originator for the Last 12 Months) | [optional] 
 **abd** | **Float** | Average Monthly Bank Deposits for the Last 12 Months | [optional] 
 **credit_summation** | **String** | Sum of all the credits in the bank statement | [optional] 
-
+**number_of_bank_transactions** | **int** | Number of Bank Transactions | [optional]
+**number_of_inward_transactions** | **int** | Number of Inward Transactions | [optional]

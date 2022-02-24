@@ -163,4 +163,16 @@ describe 'BodyCreateLoanBankStatement' do
     end
   end
 
+  describe 'test attribute "number_of_bank_transactions"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "number_of_inward_transactions"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
 end
