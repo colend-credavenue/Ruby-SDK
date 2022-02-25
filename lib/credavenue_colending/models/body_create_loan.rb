@@ -300,6 +300,9 @@ module Colending
     # Last Three Year TDS Certificate Link
     attr_accessor :tds_certificate_link_password
 
+    # CKYC Download Identifier
+    attr_accessor :ckyc_download_identifier
+
     attr_accessor :business
 
     # Refer table Guarantors for attributes
@@ -360,6 +363,15 @@ module Colending
 
     # Total value of unsecured loans
     attr_accessor :value_of_total_unsecured_loans
+
+    # Amount of writeoffs settled in last 36 months
+    attr_accessor :writeoff_amount_suitfiled_settled_in_last_36_months
+
+    # Number of DPD in last 1 month
+    attr_accessor :dpd_days_last_1_month
+
+    # Number of DPD in last 3 months
+    attr_accessor :dpd_days_last_3_months
 
     # Total Number of Loans per Bureau Report
     attr_accessor :total_number_of_loans
@@ -446,6 +458,15 @@ module Colending
 
     # Net Assets/ Debt
     attr_accessor :viability_ratio
+
+    # Net Assets/ Debt
+    attr_accessor :loan_eligibility_to_income_ratio
+
+    # Net Assets/ Debt
+    attr_accessor :risk_category
+
+    # Net Assets/ Debt
+    attr_accessor :salary_credit_declared_income
 
     # Product ID created in CA
     attr_accessor :product_id
@@ -706,6 +727,7 @@ module Colending
         :'payslip_link_password' => :'payslip_link_password',
         :'tds_certificate_link' => :'tds_certificate_link',
         :'tds_certificate_link_password' => :'tds_certificate_link_password',
+        :'ckyc_download_identifier' => :'ckyc_download_identifier',
         :'business' => :'business',
         :'guarantors' => :'guarantors',
         :'co_applicants' => :'co_applicants',
@@ -727,6 +749,9 @@ module Colending
         :'no_of_credit_cards' => :'no_of_credit_cards',
         :'total_number_of_unsecured_loans' => :'total_number_of_unsecured_loans',
         :'value_of_total_unsecured_loans' => :'value_of_total_unsecured_loans',
+        :'writeoff_amount_suitfiled_settled_in_last_36_months' => :'writeoff_amount_suitfiled_settled_in_last_36_months',
+        :'dpd_days_last_1_month' => :'dpd_days_last_1_month',
+        :'dpd_days_last_3_months' => :'dpd_days_last_3_months',
         :'total_number_of_loans' => :'total_number_of_loans',
         :'value_of_total_loans' => :'value_of_total_loans',
         :'number_of_enquiries_3months' => :'number_of_enquiries_3months',
@@ -756,6 +781,9 @@ module Colending
         :'fcf' => :'fcf',
         :'emi_obligations' => :'emi_obligations',
         :'viability_ratio' => :'viability_ratio',
+        :'loan_eligibility_to_income_ratio' => :'loan_eligibility_to_income_ratio',
+        :'risk_category' => :'risk_category',
+        :'salary_credit_declared_income' => :'salary_credit_declared_income',
         :'product_id' => :'product_id',
         :'client_loan_id' => :'client_loan_id',
         :'application_id' => :'application_id',
@@ -913,6 +941,7 @@ module Colending
         :'payslip_link_password' => :'Object',
         :'tds_certificate_link' => :'Object',
         :'tds_certificate_link_password' => :'Object',
+        :'ckyc_download_identifier' => :'Object',
         :'business' => :'Object',
         :'guarantors' => :'Object',
         :'co_applicants' => :'Object',
@@ -934,6 +963,9 @@ module Colending
         :'no_of_credit_cards' => :'Object',
         :'total_number_of_unsecured_loans' => :'Object',
         :'value_of_total_unsecured_loans' => :'Object',
+        :'writeoff_amount_suitfiled_settled_in_last_36_months' => :'Object',
+        :'dpd_days_last_1_month' => :'Object',
+        :'dpd_days_last_3_months' => :'Object',
         :'total_number_of_loans' => :'Object',
         :'value_of_total_loans' => :'Object',
         :'number_of_enquiries_3months' => :'Object',
@@ -963,6 +995,9 @@ module Colending
         :'fcf' => :'Object',
         :'emi_obligations' => :'Object',
         :'viability_ratio' => :'Object',
+        :'loan_eligibility_to_income_ratio' => :'Object',
+        :'risk_category' => :'Object',
+        :'salary_credit_declared_income' => :'Object',
         :'product_id' => :'Object',
         :'client_loan_id' => :'Object',
         :'application_id' => :'Object',
@@ -1452,6 +1487,12 @@ module Colending
         self.tds_certificate_link_password = attributes[:'tds_certificate_link_password']
       end
 
+      if attributes.key?(:'ckyc_download_identifier')
+        self.ckyc_download_identifier = attributes[:'ckyc_download_identifier']
+      end
+
+      ckyc_download_identifier
+
       if attributes.key?(:'business')
         self.business = attributes[:'business']
       end
@@ -1546,6 +1587,18 @@ module Colending
 
       if attributes.key?(:'value_of_total_unsecured_loans')
         self.value_of_total_unsecured_loans = attributes[:'value_of_total_unsecured_loans']
+      end
+
+      if attributes.key?(:'writeoff_amount_suitfiled_settled_in_last_36_months')
+        self.writeoff_amount_suitfiled_settled_in_last_36_months = attributes[:'writeoff_amount_suitfiled_settled_in_last_36_months']
+      end
+
+      if attributes.key?(:'dpd_days_last_1_month')
+        self.dpd_days_last_1_month = attributes[:'dpd_days_last_1_month']
+      end
+
+      if attributes.key?(:'dpd_days_last_3_months')
+        self.dpd_days_last_3_months = attributes[:'dpd_days_last_3_months']
       end
 
       if attributes.key?(:'total_number_of_loans')
@@ -1662,6 +1715,18 @@ module Colending
 
       if attributes.key?(:'viability_ratio')
         self.viability_ratio = attributes[:'viability_ratio']
+      end
+
+      if attributes.key?(:'loan_eligibility_to_income_ratio')
+        self.loan_eligibility_to_income_ratio = attributes[:'loan_eligibility_to_income_ratio']
+      end
+
+      if attributes.key?(:'risk_category')
+        self.risk_category = attributes[:'risk_category']
+      end
+
+      if attributes.key?(:'salary_credit_declared_income')
+        self.salary_credit_declared_income = attributes[:'salary_credit_declared_income']
       end
 
       if attributes.key?(:'product_id')
@@ -2015,6 +2080,7 @@ module Colending
           payslip_link_password == o.payslip_link_password &&
           tds_certificate_link == o.tds_certificate_link &&
           tds_certificate_link_password == o.tds_certificate_link_password &&
+          ckyc_download_identifier == o.ckyc_download_identifier &&
           business == o.business &&
           guarantors == o.guarantors &&
           co_applicants == o.co_applicants &&
@@ -2036,6 +2102,9 @@ module Colending
           no_of_credit_cards == o.no_of_credit_cards &&
           total_number_of_unsecured_loans == o.total_number_of_unsecured_loans &&
           value_of_total_unsecured_loans == o.value_of_total_unsecured_loans &&
+          writeoff_amount_suitfiled_settled_in_last_36_months == o.writeoff_amount_suitfiled_settled_in_last_36_months &&
+          dpd_days_last_1_month == o.dpd_days_last_1_month &&
+          dpd_days_last_3_months == o.dpd_days_last_3_months &&
           total_number_of_loans == o.total_number_of_loans &&
           value_of_total_loans == o.value_of_total_loans &&
           number_of_enquiries_3months == o.number_of_enquiries_3months &&
@@ -2065,6 +2134,9 @@ module Colending
           fcf == o.fcf &&
           emi_obligations == o.emi_obligations &&
           viability_ratio == o.viability_ratio &&
+          loan_eligibility_to_income_ratio == o.loan_eligibility_to_income_ratio &&
+          risk_category == o.risk_category &&
+          salary_credit_declared_income == o.salary_credit_declared_income &&
           product_id == o.product_id &&
           client_loan_id == o.client_loan_id &&
           application_id == o.application_id &&
@@ -2131,7 +2203,7 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [customer_type, customer_category, client_customer_id, title, first_name, middle_name, last_name, gender, date_of_birth, age, mobile_number, phone_number, email, official_email_id, place_of_birth, current_address, current_village, current_city_tier, current_city, current_district, current_state, current_country, current_pincode, residence_type_current_address, years_of_stay_in_current_address, permanent_address, permanent_city, permanent_city_tier, permanent_district, permanent_state, permanent_pincode, residence_type_permanent_address, years_of_stay_in_permanent_address, mailing_address, marital_status, religion, nationality, father_name, mother_name, spouse_name, education_qualification, net_monthly_income, annual_income, no_of_dependants, occupation, partner_score_on_the_customer, politically_exposed, income_source, applicant_profession, caution_negative_profile, udyam_number, pan_check, dedupe_status, pan_number, pan_number_link, pan_number_link_password, form_60_link, form_60_link_password, aadhar_number, aadhar_number_link, aadhar_number_link_password, voter_id_number, voting_id_link, voting_id_link_password, driving_license_number, driving_license_number_link, driving_license_number_link_password, driving_license_expiry_date, passport_number, passport_number_link, passport_number_link_password, video_image_link, video_image_link_password, video_kyc_detail, other_kyc_number, other_kyc_link, other_kyc_link_password, rent_agreement_link, rent_agreement_link_password, utility_bills_link, utility_bills_link_password, photo_link, photo_link_password, employer_tier, employer_category, employment_type, employment_details_name, employment_details_address, employment_details_years_of_experience, employment_details_designation, employement_vintage_current_organisation, total_work_experience, payslip_link, payslip_link_password, tds_certificate_link, tds_certificate_link_password, business, guarantors, co_applicants, bank_statement, name_of_bureau, bureau_vintage, bureau_score, bureau_report_json_link, bureau_report_json_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer_including_bureau_report, total_existing_obligations, credit_card_limit, no_of_credit_cards, total_number_of_unsecured_loans, value_of_total_unsecured_loans, total_number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_in_the_last_12_months, max_dpd_tradeline_last_12months, max_overdue_tradeline, total_overdue_amount_in_last_12m, amount_of_loan_settled_in_last_12m, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, bounces_in_last_6m, bounces_in_last_12m, bureau_validity_date, financial_data, abb_emi_ratio, dscr, foir, ltr, insr, eligibility_as_per_insr, eligibility_as_per_foir, eligibility_as_per_ltv, eligibility_loan_amount, fcf, emi_obligations, viability_ratio, product_id, client_loan_id, application_id, loan_cycle, partner_branch_code, partner_branch_name, product_type, partner_product_code, partner_scheme_code, category, sub_category, purpose, disbursement_type, number_of_tranches, end_borrower_amount, existing_lender_amount, principal_amount, interest_rate, interest_type, tenure, tenure_frequency, repayment_frequency, number_of_repayments, first_repayment_date, repayment_mode, advance_emi, umrn, interest_start_date, differential_interest, processing_fee, stamp_duty, insurance_charges, documentation_charges, other_charges, loan_plr_type, loan_plr_rate, spread_id, loan_emi, rcu_status, surrogate, sub_class, weaker_section, disbursement_accounts, assets, references, insurance_details, psl_flag, psl_description, psl_code, psl_proof_link, psl_proof_link_password, tranches, linked_loan_infos, sourcing_detail, deviation_details].hash
+      [customer_type, customer_category, client_customer_id, title, first_name, middle_name, last_name, gender, date_of_birth, age, mobile_number, phone_number, email, official_email_id, place_of_birth, current_address, current_village, current_city_tier, current_city, current_district, current_state, current_country, current_pincode, residence_type_current_address, years_of_stay_in_current_address, permanent_address, permanent_city, permanent_city_tier, permanent_district, permanent_state, permanent_pincode, residence_type_permanent_address, years_of_stay_in_permanent_address, mailing_address, marital_status, religion, nationality, father_name, mother_name, spouse_name, education_qualification, net_monthly_income, annual_income, no_of_dependants, occupation, partner_score_on_the_customer, politically_exposed, income_source, applicant_profession, caution_negative_profile, udyam_number, pan_check, dedupe_status, pan_number, pan_number_link, pan_number_link_password, form_60_link, form_60_link_password, aadhar_number, aadhar_number_link, aadhar_number_link_password, voter_id_number, voting_id_link, voting_id_link_password, driving_license_number, driving_license_number_link, driving_license_number_link_password, driving_license_expiry_date, passport_number, passport_number_link, passport_number_link_password, video_image_link, video_image_link_password, video_kyc_detail, other_kyc_number, other_kyc_link, other_kyc_link_password, rent_agreement_link, rent_agreement_link_password, utility_bills_link, utility_bills_link_password, photo_link, photo_link_password, employer_tier, employer_category, employment_type, employment_details_name, employment_details_address, employment_details_years_of_experience, employment_details_designation, employement_vintage_current_organisation, total_work_experience, payslip_link, payslip_link_password, tds_certificate_link, tds_certificate_link_password, ckyc_download_identifier, business, guarantors, co_applicants, bank_statement, name_of_bureau, bureau_vintage, bureau_score, bureau_report_json_link, bureau_report_json_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer_including_bureau_report, total_existing_obligations, credit_card_limit, no_of_credit_cards, total_number_of_unsecured_loans, value_of_total_unsecured_loans, writeoff_amount_suitfiled_settled_in_last_36_months, dpd_days_last_1_month, dpd_days_last_3_months, total_number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_in_the_last_12_months, max_dpd_tradeline_last_12months, max_overdue_tradeline, total_overdue_amount_in_last_12m, amount_of_loan_settled_in_last_12m, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, bounces_in_last_6m, bounces_in_last_12m, bureau_validity_date, financial_data, abb_emi_ratio, dscr, foir, ltr, insr, eligibility_as_per_insr, eligibility_as_per_foir, eligibility_as_per_ltv, eligibility_loan_amount, fcf, emi_obligations, viability_ratio, loan_eligibility_to_income_ratio, risk_category, salary_credit_declared_income, product_id, client_loan_id, application_id, loan_cycle, partner_branch_code, partner_branch_name, product_type, partner_product_code, partner_scheme_code, category, sub_category, purpose, disbursement_type, number_of_tranches, end_borrower_amount, existing_lender_amount, principal_amount, interest_rate, interest_type, tenure, tenure_frequency, repayment_frequency, number_of_repayments, first_repayment_date, repayment_mode, advance_emi, umrn, interest_start_date, differential_interest, processing_fee, stamp_duty, insurance_charges, documentation_charges, other_charges, loan_plr_type, loan_plr_rate, spread_id, loan_emi, rcu_status, surrogate, sub_class, weaker_section, disbursement_accounts, assets, references, insurance_details, psl_flag, psl_description, psl_code, psl_proof_link, psl_proof_link_password, tranches, linked_loan_infos, sourcing_detail, deviation_details].hash
     end
 
     # Builds the object from hash

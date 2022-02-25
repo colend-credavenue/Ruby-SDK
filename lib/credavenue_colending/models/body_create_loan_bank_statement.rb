@@ -80,6 +80,12 @@ module Colending
     # Sum of all the credits in the bank statement
     attr_accessor :credit_summation
 
+    # Number of Bank Transactions
+    attr_accessor :number_of_bank_transactions
+
+    # Number of Inward Transactions
+    attr_accessor :number_of_inward_transactions
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -104,7 +110,9 @@ module Colending
         :'finbit_json' => :'finbit_json',
         :'abb' => :'abb',
         :'abd' => :'abd',
-        :'credit_summation' => :'credit_summation'
+        :'credit_summation' => :'credit_summation',
+        :'number_of_bank_transactions' => :'number_of_bank_transactions',
+        :'number_of_inward_transactions' => :'number_of_inward_transactions'
       }
     end
 
@@ -132,7 +140,9 @@ module Colending
         :'finbit_json' => :'Object',
         :'abb' => :'Object',
         :'abd' => :'Object',
-        :'credit_summation' => :'Object'
+        :'credit_summation' => :'Object',
+        :'number_of_bank_transactions' => :'Object',
+        :'number_of_inward_transactions' => :'Object'
       }
     end
 
@@ -260,6 +270,14 @@ module Colending
       if attributes.key?(:'credit_summation')
         self.credit_summation = attributes[:'credit_summation']
       end
+
+      if attributes.key?(:'number_of_bank_transactions')
+        self.number_of_bank_transactions = attributes[:'number_of_bank_transactions']
+      end
+
+      if attributes.key?(:'number_of_inward_transactions')
+        self.number_of_inward_transactions = attributes[:'number_of_inward_transactions']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -301,7 +319,9 @@ module Colending
           finbit_json == o.finbit_json &&
           abb == o.abb &&
           abd == o.abd &&
-          credit_summation == o.credit_summation
+          credit_summation == o.credit_summation &&
+          number_of_bank_transactions == o.number_of_bank_transactions &&
+          number_of_inward_transactions == o.number_of_inward_transactions
     end
 
     # @see the `==` method
@@ -313,7 +333,7 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [bank_statement_savings_account_12_months_link, bank_statement_savings_account_12_months_link_password, bank_statement_current_account_12_months_link, bank_statement_current_account_12_months_link_password, no_of_inward_chq_returns_savings_account, no_of_outward_chq_returns_savings_account, no_of_inward_chq_returns_current_account, no_of_outward_chq_returns_current_account, bank_account_type_for_assessment, perfios_link, perfios_link_password, perfios_json_link, perfios_json_link_password, perfios_json, finbit_link, finbit_link_password, finbit_json_link, finbit_json_link_password, finbit_json, abb, abd, credit_summation].hash
+      [bank_statement_savings_account_12_months_link, bank_statement_savings_account_12_months_link_password, bank_statement_current_account_12_months_link, bank_statement_current_account_12_months_link_password, no_of_inward_chq_returns_savings_account, no_of_outward_chq_returns_savings_account, no_of_inward_chq_returns_current_account, no_of_outward_chq_returns_current_account, bank_account_type_for_assessment, perfios_link, perfios_link_password, perfios_json_link, perfios_json_link_password, perfios_json, finbit_link, finbit_link_password, finbit_json_link, finbit_json_link_password, finbit_json, abb, abd, credit_summation, number_of_bank_transactions, number_of_inward_transactions].hash
     end
 
     # Builds the object from hash
