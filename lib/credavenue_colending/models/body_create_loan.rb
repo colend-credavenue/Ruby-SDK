@@ -82,6 +82,9 @@ module Colending
     # Pincode of the current address
     attr_accessor :current_pincode
 
+    # Is the pincode verified?
+    attr_accessor :pincode_verified
+
     # rented / owned / leased
     attr_accessor :residence_type_current_address
 
@@ -195,6 +198,9 @@ module Colending
 
     # Aadhar image password
     attr_accessor :aadhar_number_link_password
+  
+    # Aadhar name match
+    attr_accessor :aadhar_name_match
 
     # Voter ID Number of customer
     attr_accessor :voter_id_number
@@ -260,6 +266,12 @@ module Colending
 
     # Photo Image password
     attr_accessor :photo_link_password
+
+    # Mobile Verification Flag
+    attr_accessor :mobile_verification_flag
+
+    # Selfie Check Flag
+    attr_accessor :selfie_check_flag
 
     # tier_1, tier_2 etc. for  the employer
     attr_accessor :employer_tier
@@ -379,11 +391,23 @@ module Colending
     # Number of Writeoff Suitfiled Settled in the Last 12 Months
     attr_accessor :number_of_writeoff_suitfiled_settled_in_the_last_12_months
 
+    # Number of Writeoff Suitfiled Settled in the Last 36 Months
+    attr_accessor :number_of_writeoff_suitfiled_settled_in_the_last_36_months
+
     # Maximum DPD Tradeline in the Last 12 Months
     attr_accessor :max_dpd_tradeline_last_12months
 
     # Maximum Overdue Tradeline
     attr_accessor :max_overdue_tradeline
+
+    # Number of DPD > 30 days in last 3 Months
+    attr_accessor :number_of_30plus_dpd_in_last_3_months
+
+    # Number of DPD > 60 days in last 6 Months
+    attr_accessor :number_of_60plus_dpd_in_last_6_months
+
+    # Number of DPD > 30 days in last 12 Months
+    attr_accessor :number_of_30plus_dpd_in_last_12_months
 
     # Total Overdue Amount in the Last 12 Months
     attr_accessor :total_overdue_amount_in_last_12m
@@ -633,6 +657,7 @@ module Colending
         :'current_state' => :'current_state',
         :'current_country' => :'current_country',
         :'current_pincode' => :'current_pincode',
+        :'pincode_verified' => :'pincode_verified',
         :'residence_type_current_address' => :'residence_type_current_address',
         :'years_of_stay_in_current_address' => :'years_of_stay_in_current_address',
         :'permanent_address' => :'permanent_address',
@@ -671,6 +696,7 @@ module Colending
         :'aadhar_number' => :'aadhar_number',
         :'aadhar_number_link' => :'aadhar_number_link',
         :'aadhar_number_link_password' => :'aadhar_number_link_password',
+        :'aadhar_name_match' => :'aadhar_name_match'
         :'voter_id_number' => :'voter_id_number',
         :'voting_id_link' => :'voting_id_link',
         :'voting_id_link_password' => :'voting_id_link_password',
@@ -693,6 +719,8 @@ module Colending
         :'utility_bills_link_password' => :'utility_bills_link_password',
         :'photo_link' => :'photo_link',
         :'photo_link_password' => :'photo_link_password',
+        :'mobile_verification_flag' => :'mobile_verification_flag',
+        :'selfie_check_flag' => :'selfie_check_flag',
         :'employer_tier' => :'employer_tier',
         :'employer_category' => :'employer_category',
         :'employment_type' => :'employment_type',
@@ -733,8 +761,12 @@ module Colending
         :'number_of_enquiries_6months' => :'number_of_enquiries_6months',
         :'number_of_enquiries_12months' => :'number_of_enquiries_12months',
         :'number_of_writeoff_suitfiled_settled_in_the_last_12_months' => :'number_of_writeoff_suitfiled_settled_in_the_last_12_months',
+        :'number_of_writeoff_suitfiled_settled_in_the_last_36_months' => :'number_of_writeoff_suitfiled_settled_in_the_last_36_months',
         :'max_dpd_tradeline_last_12months' => :'max_dpd_tradeline_last_12months',
         :'max_overdue_tradeline' => :'max_overdue_tradeline',
+        :'number_of_30plus_dpd_in_last_3_months' => :'number_of_30plus_dpd_in_last_3_months',
+        :'number_of_60plus_dpd_in_last_6_months' => :'number_of_60plus_dpd_in_last_6_months',
+        :'number_of_30plus_dpd_in_last_12_months' => :'number_of_30plus_dpd_in_last_12_months',
         :'total_overdue_amount_in_last_12m' => :'total_overdue_amount_in_last_12m',
         :'amount_of_loan_settled_in_last_12m' => :'amount_of_loan_settled_in_last_12m',
         :'nature_of_loan_settled1' => :'nature_of_loan_settled1',
@@ -840,6 +872,7 @@ module Colending
         :'current_state' => :'Object',
         :'current_country' => :'Object',
         :'current_pincode' => :'Object',
+        :'pincode_verified' => :'Object',
         :'residence_type_current_address' => :'Object',
         :'years_of_stay_in_current_address' => :'Object',
         :'permanent_address' => :'Object',
@@ -878,6 +911,7 @@ module Colending
         :'aadhar_number' => :'Object',
         :'aadhar_number_link' => :'Object',
         :'aadhar_number_link_password' => :'Object',
+        :'aadhar_name_match' => :'Object',
         :'voter_id_number' => :'Object',
         :'voting_id_link' => :'Object',
         :'voting_id_link_password' => :'Object',
@@ -900,6 +934,8 @@ module Colending
         :'utility_bills_link_password' => :'Object',
         :'photo_link' => :'Object',
         :'photo_link_password' => :'Object',
+        :'mobile_verification_flag' => :'Object',
+        :'selfie_check_flag' => :'Object',
         :'employer_tier' => :'Object',
         :'employer_category' => :'Object',
         :'employment_type' => :'Object',
@@ -940,8 +976,12 @@ module Colending
         :'number_of_enquiries_6months' => :'Object',
         :'number_of_enquiries_12months' => :'Object',
         :'number_of_writeoff_suitfiled_settled_in_the_last_12_months' => :'Object',
+        :'number_of_writeoff_suitfiled_settled_in_the_last_36_months' => :'Object',
         :'max_dpd_tradeline_last_12months' => :'Object',
         :'max_overdue_tradeline' => :'Object',
+        :'number_of_30plus_dpd_in_last_3_months' => :'Object',
+        :'number_of_60plus_dpd_in_last_6_months' => :'Object',
+        :'number_of_30plus_dpd_in_last_12_months' => :'Object',
         :'total_overdue_amount_in_last_12m' => :'Object',
         :'amount_of_loan_settled_in_last_12m' => :'Object',
         :'nature_of_loan_settled1' => :'Object',
@@ -1134,6 +1174,10 @@ module Colending
         self.current_pincode = attributes[:'current_pincode']
       end
 
+      if attributes.key?(:'pincode_verified')
+        self.pincode_verified = attributes[:'pincode_verified']
+      end
+
       if attributes.key?(:'residence_type_current_address')
         self.residence_type_current_address = attributes[:'residence_type_current_address']
       end
@@ -1292,6 +1336,10 @@ module Colending
         self.aadhar_number_link_password = attributes[:'aadhar_number_link_password']
       end
 
+      if attributes.key?(:'aadhar_name_match')
+        self.aadhar_name_match = attributes[:'aadhar_name_match']
+      end
+
       if attributes.key?(:'voter_id_number')
         self.voter_id_number = attributes[:'voter_id_number']
       end
@@ -1394,6 +1442,14 @@ module Colending
 
       if attributes.key?(:'photo_link_password')
         self.photo_link_password = attributes[:'photo_link_password']
+      end
+
+      if attributes.key?(:'mobile_verification_flag')
+        self.mobile_verification_flag = attributes[:'mobile_verification_flag']
+      end
+
+      if attributes.key?(:'selfie_check_flag')
+        self.selfie_check_flag = attributes[:'selfie_check_flag']
       end
 
       if attributes.key?(:'employer_tier')
@@ -1572,12 +1628,28 @@ module Colending
         self.number_of_writeoff_suitfiled_settled_in_the_last_12_months = attributes[:'number_of_writeoff_suitfiled_settled_in_the_last_12_months']
       end
 
+      if attributes.key?(:'number_of_writeoff_suitfiled_settled_in_the_last_36_months')
+        self.number_of_writeoff_suitfiled_settled_in_the_last_36_months = attributes[:'number_of_writeoff_suitfiled_settled_in_the_last_36_months']
+      end
+
       if attributes.key?(:'max_dpd_tradeline_last_12months')
         self.max_dpd_tradeline_last_12months = attributes[:'max_dpd_tradeline_last_12months']
       end
 
       if attributes.key?(:'max_overdue_tradeline')
         self.max_overdue_tradeline = attributes[:'max_overdue_tradeline']
+      end
+
+      if attributes.key?(:'number_of_30plus_dpd_in_last_3_months')
+        self.number_of_30plus_dpd_in_last_3_months = attributes[:'number_of_30plus_dpd_in_last_3_months']
+      end
+
+      if attributes.key?(:'number_of_60plus_dpd_in_last_6_months')
+        self.number_of_60plus_dpd_in_last_6_months = attributes[:'number_of_60plus_dpd_in_last_6_months']
+      end
+
+      if attributes.key?(:'number_of_30plus_dpd_in_last_12_months')
+        self.number_of_30plus_dpd_in_last_12_months = attributes[:'number_of_30plus_dpd_in_last_12_months']
       end
 
       if attributes.key?(:'total_overdue_amount_in_last_12m')
@@ -1942,6 +2014,7 @@ module Colending
           current_state == o.current_state &&
           current_country == o.current_country &&
           current_pincode == o.current_pincode &&
+          pincode_verified == o.pincode_verified &&
           residence_type_current_address == o.residence_type_current_address &&
           years_of_stay_in_current_address == o.years_of_stay_in_current_address &&
           permanent_address == o.permanent_address &&
@@ -1980,6 +2053,7 @@ module Colending
           aadhar_number == o.aadhar_number &&
           aadhar_number_link == o.aadhar_number_link &&
           aadhar_number_link_password == o.aadhar_number_link_password &&
+          aadhar_name_match == o.aadhar_name_match &&
           voter_id_number == o.voter_id_number &&
           voting_id_link == o.voting_id_link &&
           voting_id_link_password == o.voting_id_link_password &&
@@ -2002,6 +2076,8 @@ module Colending
           utility_bills_link_password == o.utility_bills_link_password &&
           photo_link == o.photo_link &&
           photo_link_password == o.photo_link_password &&
+          mobile_verification_flag == o.mobile_verification_flag &&
+          selfie_check_flag == o.selfie_check_flag &&
           employer_tier == o.employer_tier &&
           employer_category == o.employer_category &&
           employment_type == o.employment_type &&
@@ -2042,8 +2118,12 @@ module Colending
           number_of_enquiries_6months == o.number_of_enquiries_6months &&
           number_of_enquiries_12months == o.number_of_enquiries_12months &&
           number_of_writeoff_suitfiled_settled_in_the_last_12_months == o.number_of_writeoff_suitfiled_settled_in_the_last_12_months &&
+          number_of_writeoff_suitfiled_settled_in_the_last_36_months == o.number_of_writeoff_suitfiled_settled_in_the_last_36_months &&
           max_dpd_tradeline_last_12months == o.max_dpd_tradeline_last_12months &&
           max_overdue_tradeline == o.max_overdue_tradeline &&
+          number_of_30plus_dpd_in_last_3_months == o.number_of_30plus_dpd_in_last_3_months &&
+          number_of_60plus_dpd_in_last_6_months == o.number_of_60plus_dpd_in_last_6_months &&
+          number_of_30plus_dpd_in_last_12_months == o.number_of_30plus_dpd_in_last_12_months &&
           total_overdue_amount_in_last_12m == o.total_overdue_amount_in_last_12m &&
           amount_of_loan_settled_in_last_12m == o.amount_of_loan_settled_in_last_12m &&
           nature_of_loan_settled1 == o.nature_of_loan_settled1 &&
@@ -2131,7 +2211,8 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [customer_type, customer_category, client_customer_id, title, first_name, middle_name, last_name, gender, date_of_birth, age, mobile_number, phone_number, email, official_email_id, place_of_birth, current_address, current_village, current_city_tier, current_city, current_district, current_state, current_country, current_pincode, residence_type_current_address, years_of_stay_in_current_address, permanent_address, permanent_city, permanent_city_tier, permanent_district, permanent_state, permanent_pincode, residence_type_permanent_address, years_of_stay_in_permanent_address, mailing_address, marital_status, religion, nationality, father_name, mother_name, spouse_name, education_qualification, net_monthly_income, annual_income, no_of_dependants, occupation, partner_score_on_the_customer, politically_exposed, income_source, applicant_profession, caution_negative_profile, udyam_number, pan_check, dedupe_status, pan_number, pan_number_link, pan_number_link_password, form_60_link, form_60_link_password, aadhar_number, aadhar_number_link, aadhar_number_link_password, voter_id_number, voting_id_link, voting_id_link_password, driving_license_number, driving_license_number_link, driving_license_number_link_password, driving_license_expiry_date, passport_number, passport_number_link, passport_number_link_password, video_image_link, video_image_link_password, video_kyc_detail, other_kyc_number, other_kyc_link, other_kyc_link_password, rent_agreement_link, rent_agreement_link_password, utility_bills_link, utility_bills_link_password, photo_link, photo_link_password, employer_tier, employer_category, employment_type, employment_details_name, employment_details_address, employment_details_years_of_experience, employment_details_designation, employement_vintage_current_organisation, total_work_experience, payslip_link, payslip_link_password, tds_certificate_link, tds_certificate_link_password, business, guarantors, co_applicants, bank_statement, name_of_bureau, bureau_vintage, bureau_score, bureau_report_json_link, bureau_report_json_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer_including_bureau_report, total_existing_obligations, credit_card_limit, no_of_credit_cards, total_number_of_unsecured_loans, value_of_total_unsecured_loans, total_number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_in_the_last_12_months, max_dpd_tradeline_last_12months, max_overdue_tradeline, total_overdue_amount_in_last_12m, amount_of_loan_settled_in_last_12m, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, bounces_in_last_6m, bounces_in_last_12m, bureau_validity_date, financial_data, abb_emi_ratio, dscr, foir, ltr, insr, eligibility_as_per_insr, eligibility_as_per_foir, eligibility_as_per_ltv, eligibility_loan_amount, fcf, emi_obligations, viability_ratio, product_id, client_loan_id, application_id, loan_cycle, partner_branch_code, partner_branch_name, product_type, partner_product_code, partner_scheme_code, category, sub_category, purpose, disbursement_type, number_of_tranches, end_borrower_amount, existing_lender_amount, principal_amount, interest_rate, interest_type, tenure, tenure_frequency, repayment_frequency, number_of_repayments, first_repayment_date, repayment_mode, advance_emi, umrn, interest_start_date, differential_interest, processing_fee, stamp_duty, insurance_charges, documentation_charges, other_charges, loan_plr_type, loan_plr_rate, spread_id, loan_emi, rcu_status, surrogate, sub_class, weaker_section, disbursement_accounts, assets, references, insurance_details, psl_flag, psl_description, psl_code, psl_proof_link, psl_proof_link_password, tranches, linked_loan_infos, sourcing_detail, deviation_details].hash
+      [customer_type, customer_category, client_customer_id, title, first_name, middle_name, last_name, gender, date_of_birth, age, mobile_number, phone_number, email, official_email_id, place_of_birth, current_address, current_village, current_city_tier, current_city, current_district, current_state, current_country, current_pincode, pincode_verified, residence_type_current_address, years_of_stay_in_current_address, permanent_address, permanent_city, permanent_city_tier, permanent_district, permanent_state, permanent_pincode, residence_type_permanent_address, years_of_stay_in_permanent_address, mailing_address, marital_status, religion, nationality, father_name, mother_name, spouse_name, education_qualification, net_monthly_income, annual_income, no_of_dependants, occupation, partner_score_on_the_customer, politically_exposed, income_source, applicant_profession, caution_negative_profile, udyam_number, pan_check, dedupe_status, pan_number, pan_number_link, pan_number_link_password, form_60_link, form_60_link_password, aadhar_number, aadhar_number_link, aadhar_number_link_password, aadhar_name_match, voter_id_number, voting_id_link, voting_id_link_password, driving_license_number, driving_license_number_link, driving_license_number_link_password, driving_license_expiry_date, passport_number, passport_number_link, passport_number_link_password, video_image_link, video_image_link_password, video_kyc_detail, other_kyc_number, other_kyc_link, other_kyc_link_password, rent_agreement_link, rent_agreement_link_password, utility_bills_link, utility_bills_link_password, photo_link, photo_link_password, mobile_verification_flag, selfie_check_flag, employer_tier, employer_category, employment_type, employment_details_name, employment_details_address, employment_details_years_of_experience, employment_details_designation, employement_vintage_current_organisation, total_work_experience, payslip_link, payslip_link_password, tds_certificate_link, tds_certificate_link_password, business, guarantors, co_applicants, bank_statement, name_of_bureau, bureau_vintage, bureau_score, bureau_report_json_link, bureau_report_json_link_password, bureau_json_link, bureau_json_link_password, bureau_json, commercial_bureau_score, commercial_bureau_score_link, commercial_bureau_score_link_password, partner_score_on_the_customer_including_bureau_report, total_existing_obligations, credit_card_limit, no_of_credit_cards, total_number_of_unsecured_loans, value_of_total_unsecured_loans, total_number_of_loans, value_of_total_loans, number_of_enquiries_3months, number_of_enquiries_6months, number_of_enquiries_12months, number_of_writeoff_suitfiled_settled_in_the_last_12_months, 
+      number_of_writeoff_suitfiled_settled_in_the_last_36_months,max_dpd_tradeline_last_12months, max_overdue_tradeline, number_of_30plus_dpd_in_last_3_months, number_of_60plus_dpd_in_last_6_months, number_of_30plus_dpd_in_last_12_months, total_overdue_amount_in_last_12m, amount_of_loan_settled_in_last_12m, nature_of_loan_settled1, nature_of_loan_settled2, total_emi_bounces, bounces_in_last_6m, bounces_in_last_12m, bureau_validity_date, financial_data, abb_emi_ratio, dscr, foir, ltr, insr, eligibility_as_per_insr, eligibility_as_per_foir, eligibility_as_per_ltv, eligibility_loan_amount, fcf, emi_obligations, viability_ratio, product_id, client_loan_id, application_id, loan_cycle, partner_branch_code, partner_branch_name, product_type, partner_product_code, partner_scheme_code, category, sub_category, purpose, disbursement_type, number_of_tranches, end_borrower_amount, existing_lender_amount, principal_amount, interest_rate, interest_type, tenure, tenure_frequency, repayment_frequency, number_of_repayments, first_repayment_date, repayment_mode, advance_emi, umrn, interest_start_date, differential_interest, processing_fee, stamp_duty, insurance_charges, documentation_charges, other_charges, loan_plr_type, loan_plr_rate, spread_id, loan_emi, rcu_status, surrogate, sub_class, weaker_section, disbursement_accounts, assets, references, insurance_details, psl_flag, psl_description, psl_code, psl_proof_link, psl_proof_link_password, tranches, linked_loan_infos, sourcing_detail, deviation_details].hash
     end
 
     # Builds the object from hash
