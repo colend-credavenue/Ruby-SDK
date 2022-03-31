@@ -696,7 +696,7 @@ module Colending
         :'aadhar_number' => :'aadhar_number',
         :'aadhar_number_link' => :'aadhar_number_link',
         :'aadhar_number_link_password' => :'aadhar_number_link_password',
-        :'aadhar_name_match' => :'aadhar_name_match'
+        :'aadhar_name_match' => :'aadhar_name_match',
         :'voter_id_number' => :'voter_id_number',
         :'voting_id_link' => :'voting_id_link',
         :'voting_id_link_password' => :'voting_id_link_password',
