@@ -20,6 +20,9 @@ module Colending
     # Disbursement date to the end customer
     attr_accessor :disbursement_date
 
+    # Date on which loan is disbursed
+    attr_accessor :disbursement_value_date
+
     # Disbursed Amount
     attr_accessor :disbursed_amount
 
@@ -34,6 +37,7 @@ module Colending
       {
         :'account_no' => :'account_no',
         :'disbursement_date' => :'disbursement_date',
+        :'disbursement_value_date' => :'disbursement_value_date',
         :'disbursed_amount' => :'disbursed_amount',
         :'instrument_number' => :'instrument_number',
         :'instrument_type' => :'instrument_type'
@@ -45,6 +49,7 @@ module Colending
       {
         :'account_no' => :'Object',
         :'disbursement_date' => :'Object',
+        :'disbursement_value_date' => :'Object',
         :'disbursed_amount' => :'Object',
         :'instrument_number' => :'Object',
         :'instrument_type' => :'Object'
@@ -80,6 +85,10 @@ module Colending
         self.disbursement_date = attributes[:'disbursement_date']
       end
 
+      if attributes.key?(:'disbursement_value_date')
+        self.disbursement_value_date = attributes[:'disbursement_value_date']
+      end
+
       if attributes.key?(:'disbursed_amount')
         self.disbursed_amount = attributes[:'disbursed_amount']
       end
@@ -113,6 +122,7 @@ module Colending
       self.class == o.class &&
           account_no == o.account_no &&
           disbursement_date == o.disbursement_date &&
+          disbursement_value_date == o.disbursement_value_date &&
           disbursed_amount == o.disbursed_amount &&
           instrument_number == o.instrument_number &&
           instrument_type == o.instrument_type
@@ -127,7 +137,7 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_no, disbursement_date, disbursed_amount, instrument_number, instrument_type].hash
+      [account_no, disbursement_date, disbursement_value_date, disbursed_amount, instrument_number, instrument_type].hash
     end
 
     # Builds the object from hash
