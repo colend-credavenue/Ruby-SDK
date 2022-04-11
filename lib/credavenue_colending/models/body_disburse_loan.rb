@@ -19,6 +19,9 @@ module Colending
     # Disbursement date to the end customer
     attr_accessor :disbursement_date
 
+    # Date on which loan id disbursed
+    attr_accessor :disbursement_value_date
+
     # UTR / Cheque Number
     attr_accessor :instrument_number
 
@@ -42,6 +45,7 @@ module Colending
       {
         :'first_repayment_date' => :'first_repayment_date',
         :'disbursement_date' => :'disbursement_date',
+        :'disbursement_value_date' => :'disbursement_value_date',
         :'instrument_number' => :'instrument_number',
         :'instrument_type' => :'instrument_type',
         :'penny_test_status' => :'penny_test_status',
@@ -56,6 +60,7 @@ module Colending
       {
         :'first_repayment_date' => :'Object',
         :'disbursement_date' => :'Object',
+        :'disbursement_value_date' => :'Object',
         :'instrument_number' => :'Object',
         :'instrument_type' => :'Object',
         :'penny_test_status' => :'Object',
@@ -92,6 +97,10 @@ module Colending
 
       if attributes.key?(:'disbursement_date')
         self.disbursement_date = attributes[:'disbursement_date']
+      end
+
+      if attributes.key?(:'disbursement_value_date')
+        self.disbursement_value_date = attributes[:'disbursement_value_date']
       end
 
       if attributes.key?(:'instrument_number')
@@ -143,6 +152,7 @@ module Colending
       self.class == o.class &&
           first_repayment_date == o.first_repayment_date &&
           disbursement_date == o.disbursement_date &&
+          disbursement_value_date == o.disbursement_value_date &&
           instrument_number == o.instrument_number &&
           instrument_type == o.instrument_type &&
           penny_test_status == o.penny_test_status &&
@@ -160,7 +170,7 @@ module Colending
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [first_repayment_date, disbursement_date, instrument_number, instrument_type, penny_test_status, penny_test_report_link, penny_test_report_link_password, disbursement_accounts].hash
+      [first_repayment_date, disbursement_date, disbursement_value_date, instrument_number, instrument_type, penny_test_status, penny_test_report_link, penny_test_report_link_password, disbursement_accounts].hash
     end
 
     # Builds the object from hash

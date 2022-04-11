@@ -7,5 +7,6 @@ Name | Type | Description | Notes
 **disbursement_date** | **Date** | Disbursement date to the end customer | [optional] 
 **disbursed_amount** | **Float** | Disbursed Amount | [optional] 
 **instrument_number** | **String** | UTR / Cheque Number | [optional] 
-**instrument_type** | **String** | RTGS / NEFT / UPI / Cheque | [optional] 
+**instrument_type** | **String** | RTGS / NEFT / UPI / Cheque | [optional]
+**disbursement_value_date** | **Date** | Date on which loan is disbursed | [optional]
 

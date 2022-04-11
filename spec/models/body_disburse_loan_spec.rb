@@ -43,6 +43,12 @@ describe 'BodyDisburseLoan' do
     end
   end
 
+  describe 'test attribute "disbursement_value_date"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "instrument_number"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
